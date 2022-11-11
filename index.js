@@ -3,8 +3,8 @@ const cors = require("cors");
 const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
 require("dotenv").config();
 
-const app = express();
 const port = process.env.PORT || 5000;
+const app = express();
 
 app.use(cors());
 app.use(express.json());
@@ -41,7 +41,7 @@ async function run() {
   } finally {
   }
 }
-run().catch((err) => console.error(err));
+run().catch((err) => console.log(err));
 
 app.get("/", (req, res) => {
   res.send("Hello World!");
